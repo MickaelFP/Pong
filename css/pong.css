@@ -1,27 +1,29 @@
 body{
     /** permet de centrer les éléments sur la page **/
-  display: flex;
+    display: flex;
     min-height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    
+    /** on défini les paramètres corps: couleurs, position **/
     background-color:#000;
     color:#fff;
     font-family: monospace;
 }
 
 #terrain{
-
-border:1px solid white ;
-width:800px;
-height:400px;
-position: relative;
+    /** on défini les paramètres du terrain: paramètres de la bordure, couleur,position **/
+    border:1px solid white ;
+    width:800px;
+    height:400px;
+    position: relative;
 
 }
 
 #balle{
-
+    /** on défini les paramètres de la balle: dimensions, couleur,position **/
     width:20px;
     height:20px;
     background-color: white;
