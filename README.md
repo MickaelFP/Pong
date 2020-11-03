@@ -1,2 +1,2 @@
 # Pong
-https://MickaelFP.github.io/PONG/index.html
+https://MickaelFP.github.io/Pong/index.html
