@@ -1,0 +1,32 @@
+body{
+    /** permet de centrer les éléments sur la page **/
+  display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color:#000;
+    color:#fff;
+    font-family: monospace;
+}
+
+#terrain{
+
+border:1px solid white ;
+width:800px;
+height:400px;
+position: relative;
+
+}
+
+#balle{
+
+    width:20px;
+    height:20px;
+    background-color: white;
+    border-radius: 100px;
+    position:absolute;
+    top:50%;
+    left:50%;
+}
