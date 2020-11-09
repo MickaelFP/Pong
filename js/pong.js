@@ -1,10 +1,9 @@
+//On défini les paramètres de la balle
 let largeur=$("#balle").width();
 let gauche=parseInt($("#balle").css("left"));
 let haut=parseInt($("#balle").css("top"));
 
-
-
-
+//On fait appel à la class Terrain pour définire des paramètres au terrain: fonction $element
 class Terrain{
     constructor($element){
         this.$element=$element;
@@ -12,7 +11,7 @@ class Terrain{
         this.hauteur=$element.height();
     }
 }
-
+//On fait appel à la class Balle pour définire des paramètres à la balle: vitesse
 class Balle{
     constructor($html){
         this.$html=$html;
