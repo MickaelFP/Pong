@@ -1,3 +1,5 @@
+/** id > class **/
+
 body{
     /** permet de centrer les éléments sur la page **/
     display: flex;
@@ -5,50 +7,59 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: center; 
     
     /** on défini les paramètres corps: couleurs, position **/
-    background-color:#000;
-    color:#fff;
+    background-color: #000000;
+    color: #ffffff;
     font-family: monospace;
 }
 
+/** on défini les paramètres du terrain: paramètres de la bordure, couleur,position **/
 #terrain{
-    /** on défini les paramètres du terrain: paramètres de la bordure, couleur,position **/
-    width:800px;
-    height:400px;
-    border:1px solid #fff ;
+    
+    width: 800px;
+    height : 400px;
     position: relative;
+
+    border:1px solid #000;
+    border-top-color:#fff;
+    border-bottom-color:#fff;
 }
 
 .tilt{
     border-color: rgb(0, 250, 0) !important;
 }
 
+/** on défini les paramètres de la balle: dimensions, couleur,position **/
 #balle{
-    /** on défini les paramètres de la balle: dimensions, couleur,position **/
-    width:20px;
-    height:20px;
-    background-color: #fff;
-    border-radius: 100px;
-    position:absolute;
-    top:50%;
-    left:50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+    top : 50%;
+    left: 50%;  
 }
 
+/** on défini les paramètres de la raquette: dimension, couleur, position ,variable -> calculée**/
 .raquette{
-    /** on défini les paramètres de la raquette: dimension, couleur, position ,variable -> calculée**/
-    position: absolute; 
-    --hauteur: 25%;
+    
+    position: absolute;
+
+    --hauteur: 25%; /** definir une variable **/
+
+    top : calc( 50% - var(--hauteur)/2 ); /** clac, faire des calculs en css // var utiliser la variable **/
+
     width: 10px;
     height: var(--hauteur);
     background-color: #fff;
-    top : calc( 50% - var(--hauteur)/2 ); 
 }
-
-#droite{
+#droite
+{
     right: 1%;
 }
-#gauche{
+#gauche
+{
     left: 1%;
 }
