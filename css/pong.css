@@ -26,6 +26,10 @@ body{
     border-top-color:#fff;
     border-bottom-color:#fff;
 }
+}
+.tilt{
+    border-color: rgb(0, 250, 0) !important;
+}
 
 /** on défini les paramètres de la balle: dimensions, couleur,position **/
 #balle{
