@@ -15,20 +15,40 @@ body{
 
 #terrain{
     /** on défini les paramètres du terrain: paramètres de la bordure, couleur,position **/
-    border:1px solid white ;
     width:800px;
     height:400px;
+    border:1px solid #fff ;
     position: relative;
+}
 
+.tilt{
+    border-color: rgb(0, 250, 0) !important;
 }
 
 #balle{
     /** on défini les paramètres de la balle: dimensions, couleur,position **/
     width:20px;
     height:20px;
-    background-color: white;
+    background-color: #fff;
     border-radius: 100px;
     position:absolute;
     top:50%;
     left:50%;
+}
+
+.raquette{
+    /** on défini les paramètres de la raquette: dimension, couleur, position ,variable -> calculée**/
+    position: absolute; 
+    --hauteur: 25%;
+    width: 10px;
+    height: var(--hauteur);
+    background-color: #fff;
+    top : calc( 50% - var(--hauteur)/2 ); 
+}
+
+#droite{
+    right: 1%;
+}
+#gauche{
+    left: 1%;
 }
