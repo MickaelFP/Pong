@@ -1,4 +1,4 @@
-/* On créait une classe pour définir les paramètres de la raquette */
+// On créait une classe pour définir les paramètres de la raquette
 class Raquette{
     constructor($element){
         this.$element = $element;
