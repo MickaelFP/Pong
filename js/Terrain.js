@@ -1,4 +1,4 @@
-/* On créait une classe pour définir les paramètres du terrain */
+// On créait une classe pour définir les paramètres du terrain
 class Terrain{
     constructor($element){
         this.$element = $element;
@@ -7,7 +7,7 @@ class Terrain{
         this.hauteur = $element.height();
     }
     
-    /* On ajoute une classe que l'on retire par la suite */
+    // On ajoute une classe que l'on retire par la suite
     tilt()
     {
        
