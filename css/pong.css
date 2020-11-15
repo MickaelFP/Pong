@@ -42,14 +42,14 @@ body{
     left: 50%;  
 }
 
-/** on défini les paramètres de la raquette: dimension, couleur, position ,variable -> calculée**/
+/** on défini les paramètres de la raquette: dimension, couleur, position , insérer une variable -> calculer la variable **/
 .raquette{
     
     position: absolute;
 
-    --hauteur: 25%; /** definir une variable **/
+    --hauteur: 25%;
 
-    top : calc( 50% - var(--hauteur)/2 ); /** clac, faire des calculs en css // var utiliser la variable **/
+    top : calc( 50% - var(--hauteur)/2 );
 
     width: 10px;
     height: var(--hauteur);
