@@ -93,7 +93,7 @@ class Balle{
             terrain.tiltGauche();
             this.positionX = 0;
             this.vitesseX *= -1;
-            this.recenter();
+            this.recentrer();
         }
     
         //Droite
@@ -101,7 +101,7 @@ class Balle{
             terrain.tiltDroite();
             this.droite = terrain.largeur;
             this.vitesseX *= -1;
-            this.recenter();
+            this.recentrer();
         }
         
         //Haut
