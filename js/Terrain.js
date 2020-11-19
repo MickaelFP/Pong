@@ -12,12 +12,12 @@ class Terrain{
 
  tiltHaut(){
         this.$element.addClass("tiltHaut");
-        let buffer = this;
+        let ici = this;
 
         setTimeout(
             function (){
                 
-                buffer.$element.removeClass("tiltHaut");
+                ici.$element.removeClass("tiltHaut");
             }, 200
         );
     }
@@ -25,12 +25,12 @@ class Terrain{
     tiltBas(){
         
         this.$element.addClass("tiltBas");
-        let buffer = this;
+        let ici = this;
 
         setTimeout(
             function (){
                 
-                buffer.$element.removeClass("tiltBas");
+                ici.$element.removeClass("tiltBas");
             }, 200
         );
     }
