@@ -1,4 +1,4 @@
-// On créait une classe pour définir les paramètres du terrain
+// On créait une classe pour définir les paramètres du terrain: dimensions
 class Terrain{
     constructor($element){
         this.$element = $element;
@@ -7,18 +7,53 @@ class Terrain{
         this.hauteur = $element.height();
     }
     
-    // On ajoute une classe que l'on retire par la suite
-    tilt()
-    {
-       
-        this.$element.addClass("tilt");
+    /* On ajoute des classe que l'on retire par la suite. Cela va permettre de faire réagir les bordures du terrain,
+    et ainsi permettre les rebonds de la balle, en ajoutant un effet de clignotement de couleur */
+
+    tiltHaut(){
+        this.$element.addClass("tiltHaut");
         let ici = this;
 
         setTimeout(
-            function()
-            {
-                ici.$element.removeClass("tilt");
-            },200
+            function (){
+                
+                ici.$element.removeClass("tiltHaut");
+            }, 200
+        );
+    }
+
+    tiltBas(){
+        
+        this.$element.addClass("tiltBas");
+        let ici = this;
+
+        setTimeout(
+            function (){
+                
+                ici.$element.removeClass("tiltBas");
+            }, 200
+        );
+    }
+
+    tiltDroite(){
+        this.$element.addClass("tiltDroite");
+        let ici = this;
+
+        setTimeout(
+            function (){
+                ici.$element.removeClass("tiltDroite");
+            }, 200
+        );
+    }
+
+    tiltGauche(){
+        this.$element.addClass("tiltGauche");
+        let ici = this;
+
+        setTimeout(
+            function (){
+                ici.$element.removeClass("tiltGauche");
+            }, 200
         );
     }
 }
