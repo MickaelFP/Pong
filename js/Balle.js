@@ -90,7 +90,7 @@ class Balle{
         //Limites du terrain et rebonds sur elles
         //Gauche
         if(this.positionX < 0){
-            terrain.tilt();
+            terrain.tiltGauche();
             this.positionX = 0;
             this.vitesseX *= -1;
             this.recenter();
@@ -98,7 +98,7 @@ class Balle{
     
         //Droite
         if( this.droite > terrain.largeur){
-            terrain.tilt();
+            terrain.tiltDroite();
             this.droite = terrain.largeur;
             this.vitesseX *= -1;
             this.recenter();
@@ -106,14 +106,14 @@ class Balle{
         
         //Haut
         if(this.positionY < 0){
-            terrain.tilt();
+            terrain.tiltHaut();
             this.positionY = 0;
             this.vitesseY *= -1;
         }
 
         //Bas
         if( this.bas > terrain.hauteur){
-            terrain.tilt();
+            terrain.tiltBas();
             this.bas = terrain.hauteur;
             this.vitesseY *= -1;
         }
