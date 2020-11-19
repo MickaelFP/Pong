@@ -103,5 +103,5 @@ class Balle{
         this.$element.css("left",balle.positionX);
         this.$element.css("top",balle.positionY);
     }
-    
+
 }
