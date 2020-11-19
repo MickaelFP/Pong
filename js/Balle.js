@@ -1,76 +1,31 @@
 // On créait une classe pour définir les paramètres de la balle
 class Balle{
-    /**
-     *
-     * @param $element
-     */
     constructor($element){
         this.$element = $element;
-        /**
-         *
-         * @type {number}
-         */
+
         this.hauteur = $element.height();
-        /**
-         *
-         * @type {number}
-         */
         this.largeur = $element.width();
-        /**
-         *
-         * @type {number}
-         */
+        
         this.positionX = parseInt($element.css("left"));
-        /**
-         *
-         * @type {number}
-         */
         this.positionY = parseInt($element.css("top"));
-        /**
-         *
-         * @type {number}
-         */
+        
         this.vitesseX = 2;
-        /**
-         *
-         * @type {number}
-         */
         this.vitesseY = 0.5;
-        /**
-         *
-         * @type {number}
-         */
-        this.angle = Math.random() * 2 * Math.PI;
+        this.angle = Math.random()*2*Math.PI;
     }
 
-    /**
-     *
-     * @returns {number}
-     */
     get bas(){
         return this.positionY + this.hauteur;
     }
 
-    /**
-     *
-     * @param value
-     */
     set bas(value){
         this.positionY = value - this.hauteur;
     }
 
-    /**
-     *
-     * @returns {number}
-     */
     get droite(){
         return this.positionX + this.largeur;
     }
 
-    /**
-     *
-     * @param value
-     */
     set droite(value){
         this.positionX = value - this.largeur;
     }
