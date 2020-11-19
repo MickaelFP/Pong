@@ -13,6 +13,7 @@ body{
     background-color: #000000;
     color: #ffffff;
     font-family: monospace;
+    
 }
 
 /** on défini les paramètres du terrain: paramètres de la bordure, couleur,position **/
@@ -25,6 +26,7 @@ body{
     border:1px solid #000;
     border-top-color:#fff;
     border-bottom-color:#fff;
+    
 }
 
 .tilt{
@@ -33,33 +35,36 @@ body{
 
 /** on défini les paramètres de la balle: dimensions, couleur,position **/
 #balle{
+    
     width: 20px;
     height: 20px;
     position: absolute;
     background-color: rgb(255, 255, 255);
     border-radius: 100%;
     top : 50%;
-    left: 50%;  
+    left: 50%;
+    
 }
 
-/** on défini les paramètres de la raquette: dimension, couleur, position ,variable -> calculée**/
+/** on défini les paramètres de la raquette: dimension, couleur, position , insérer une variable -> calculer la variable **/
 .raquette{
     
     position: absolute;
 
-    --hauteur: 25%; /** definir une variable **/
+    --hauteur: 25%;
 
-    top : calc( 50% - var(--hauteur)/2 ); /** clac, faire des calculs en css // var utiliser la variable **/
+    top : calc( 50% - var(--hauteur)/2 );
 
     width: 10px;
     height: var(--hauteur);
     background-color: #fff;
+    
 }
-#droite
-{
+
+#droite{
     right: 1%;
 }
-#gauche
-{
+
+#gauche{
     left: 1%;
 }
