@@ -10,7 +10,7 @@ class Terrain{
     /* On ajoute des classe que l'on retire par la suite. Cela va permettre de faire réagir les bordures du terrain,
     et ainsi permettre les rebonds de la balle, en ajoutant un effet de clignotement de couleur */
 
-    tiltHaut(){
+ tiltHaut(){
         this.$element.addClass("tiltHaut");
         let ici = this;
 
@@ -47,6 +47,7 @@ class Terrain{
     }
 
     tiltGauche(){
+
         this.$element.addClass("tiltGauche");
         let ici = this;
 
