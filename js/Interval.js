@@ -1,9 +1,24 @@
 // On créait une nouvelle fonction afin de definir les mouvents de la balle et de la raquette
+/**
+ *Initialise un nouveau terrain pour le jeu
+ * @type {Terrain}
+ */
 let terrain = new Terrain($("#terrain"));
+/**
+ *Initialise une nouvelle balle
+ * @type {Balle}
+ */
 let balle = new Balle($("#balle"));
+/**
+ *Initialise une raquette gauche
+ * @type {Raquette}
+ */
 let raquetteGauche = new Raquette($("#gauche"));
+/**
+ *Initialise une raquette droite
+ * @type {Raquette}
+ */
 let raquetteDroite = new Raquette($("#droite"));
-raquetteDroite.changeDirection();
 
 // On créait une boucle pour les fonction précédentes
 setInterval(function(){
