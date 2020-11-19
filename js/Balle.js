@@ -4,7 +4,7 @@ class Balle{
      *
      * @param $element
      */
-    constructor($element) {
+    constructor($element){
         this.$element = $element;
         /**
          *
@@ -47,7 +47,7 @@ class Balle{
      *
      * @returns {number}
      */
-    get bas() {
+    get bas(){
         return this.positionY + this.hauteur;
     }
 
@@ -55,7 +55,7 @@ class Balle{
      *
      * @param value
      */
-    set bas(value) {
+    set bas(value){
         this.positionY = value - this.hauteur;
     }
 
@@ -63,7 +63,7 @@ class Balle{
      *
      * @returns {number}
      */
-    get droite() {
+    get droite(){
         return this.positionX + this.largeur;
     }
 
@@ -71,7 +71,7 @@ class Balle{
      *
      * @param value
      */
-    set droite(value) {
+    set droite(value){
         this.positionX = value - this.largeur;
     }
 
