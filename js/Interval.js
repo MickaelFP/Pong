@@ -3,6 +3,8 @@ let terrain = new Terrain($("#terrain"));
 let balle = new Balle($("#balle"));
 let raquetteGauche = new Raquette($("#gauche"));
 let raquetteDroite = new Raquette($("#droite"));
+let joueur0 = new Joueur($("#gauche"));
+let joueur1 = new Joueur($("#droite"));
 
 // On créait une boucle pour les fonction précédentes
 setInterval(function(){

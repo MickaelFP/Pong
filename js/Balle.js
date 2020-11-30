@@ -9,9 +9,14 @@ class Balle{
         this.positionX = parseInt($element.css("left"));
         this.positionY = parseInt($element.css("top"));
 
-        this.vitesseX = 2;
-        this.vitesseY = 0.5;
-        this.angle = Math.random() * 2 * Math.PI;
+        this.vitesseDepart = terrain.largeur / 500;
+        this.vitesse = this.vitesseDepart;
+        this.vitesseMax = terrain.largeur / 100;
+        this.acceleration = 1.1;
+
+        this.calc = Math.random();
+
+        this.angle = this.defAngle();
     }
 
     get bas(){
@@ -30,7 +35,11 @@ class Balle{
         this.positionX = value - this.largeur;
     }
 
-    bouger(){
+    defAngle() {
+        return 
+    }
+
+    bouger() {
         this.positionX += Math.cos(this.angle) * this.vitesseX;
         this.positionY += Math.sin(this.angle) * this.vitesseY;
 
@@ -40,22 +49,24 @@ class Balle{
 
     /* On définit les limites qui sont indispensables pour restreindre le déplacement des raquettes et de la balle à l'intérieur
     du terrain. Elles permettent donc de paramétrer/définir les rebonds que l'on souhaite qu'elles effectuent sur ces limites */
-    limite(){
+    limite() {
 
         //Limites du terrain et rebonds sur elles
         //Gauche
         if(this.positionX < 0){
+            joueur1.ajoutScore();
             terrain.tiltGauche();
             this.positionX = 0;
-            this.vitesseX *= -1;
+            this.angle = Math.PI - this.angle;
             this.recentrer();
         }
     
         //Droite
         if( this.droite > terrain.largeur){
+            joueur0.ajoutScore();
             terrain.tiltDroite();
             this.droite = terrain.largeur;
-            this.vitesseX *= -1;
+            this.angle = Math.PI - this.angle;
             this.recentrer();
         }
         
@@ -63,14 +74,14 @@ class Balle{
         if(this.positionY < 0){
             terrain.tiltHaut();
             this.positionY = 0;
-            this.vitesseY *= -1;
+            this.angle = -(this.angle);
         }
 
         //Bas
         if( this.bas > terrain.hauteur){
             terrain.tiltBas();
             this.bas = terrain.hauteur;
-            this.vitesseY *= -1;
+            this.angle = -(this.angle);
         }
 
         //Limites des raquettes et rebonds sur elles
@@ -78,7 +89,10 @@ class Balle{
         if(this.positionX < raquetteGauche.droite){
             if(this.bas > raquetteGauche.positionY){
                 if(this.positionY < raquetteGauche.bas){
-                    this.vitesseX *= -1;
+                    this.angle = Math.PI - this.angle;
+                    this.accelerer();
+
+                    raquetteGauche.changerCouleur();
                 }
             }
         }
@@ -87,7 +101,10 @@ class Balle{
         if(this.droite > raquetteDroite.positionX){
             if(this.bas > raquetteDroite.positionY){
                 if(this.positionY < raquetteDroite.bas){
-                    this.vitesseX *= -1;
+                    this.angle = Math.PI - this.angle;
+                    this.accelerer();
+
+                    raquetteDroite.changerCouleur();
                 }
             }
         }
