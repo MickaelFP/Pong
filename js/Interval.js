@@ -33,7 +33,7 @@ $("#btn-jouer").on("mouseup", function (event) {
 
 //On fait appel aux addEventListener afin de pouvoir détecter et ainsi lire les touches utiliser
 window.addEventListener("keydown", function (event) {
-    if (event.defaultPrevented){
+    if (event.defaultPrevented) {
         return
     }
 
@@ -55,7 +55,7 @@ window.addEventListener("keydown", function (event) {
 }, true);
 
 window.addEventListener("keyup", function (event) {
-    if (event.defaultPrevented){
+    if (event.defaultPrevented) {
         return
     }
     /* On va pouvoir attribuer maintenant des conditions d'arrêt du mouvement des raquettes à nos touches,
