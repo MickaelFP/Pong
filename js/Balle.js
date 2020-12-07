@@ -1,6 +1,6 @@
 // On créait une classe pour définir les paramètres de la balle
-class Balle{
-    constructor($element){
+class Balle {
+    constructor($element) {
         this.$element = $element;
 
         this.hauteur = $element.height();
@@ -19,26 +19,36 @@ class Balle{
         this.angle = this.defAngle();
     }
 
-    get bas(){
+    get bas() {
         return this.positionY + this.hauteur;
     }
 
-    set bas(value){
+    set bas(value) {
         this.positionY = value - this.hauteur;
     }
 
-    get droite(){
+    get droite() {
         return this.positionX + this.largeur;
     }
 
-    set droite(value){
+    set droite(value) {
         this.positionX = value - this.largeur;
     }
 
     defAngle() {
-        return; 
+        this.buf < 0.5 ? (5*Math.PI/4) - Math.random()*(2*Math.PI/4) : (Math.PI/4) - Math.random()*(2*Math.PI/4)
     }
-
+    
+    accelerer() {
+        if (Math.abs(this.vitesse) < this.vitesseMax) {
+            this.vitesse *= this.acceleration;
+            consol.log(Math.abs(this.vitesse))            
+        }
+        else () {
+            this.vitesse = this.vitesseMax;
+        }
+    }
+    
     bouger() {
         this.positionX += Math.cos(this.angle) * this.vitesseX;
         this.positionY += Math.sin(this.angle) * this.vitesseY;
@@ -53,7 +63,7 @@ class Balle{
 
         //Limites du terrain et rebonds sur elles
         //Gauche
-        if(this.positionX < 0){
+        if(this.positionX < 0) {
             joueur1.ajoutScore();
             terrain.tiltGauche();
             this.positionX = 0;
@@ -62,7 +72,7 @@ class Balle{
         }
     
         //Droite
-        if( this.droite > terrain.largeur){
+        if( this.droite > terrain.largeur) {
             joueur0.ajoutScore();
             terrain.tiltDroite();
             this.droite = terrain.largeur;
@@ -71,14 +81,14 @@ class Balle{
         }
         
         //Haut
-        if(this.positionY < 0){
+        if(this.positionY < 0) {
             terrain.tiltHaut();
             this.positionY = 0;
             this.angle = -(this.angle);
         }
 
         //Bas
-        if( this.bas > terrain.hauteur){
+        if( this.bas > terrain.hauteur) {
             terrain.tiltBas();
             this.bas = terrain.hauteur;
             this.angle = -(this.angle);
@@ -86,9 +96,9 @@ class Balle{
 
         //Limites des raquettes et rebonds sur elles
         //Gauche
-        if(this.positionX < raquetteGauche.droite){
-            if(this.bas > raquetteGauche.positionY){
-                if(this.positionY < raquetteGauche.bas){
+        if(this.positionX < raquetteGauche.droite) {
+            if(this.bas > raquetteGauche.positionY) {
+                if(this.positionY < raquetteGauche.bas) {
                     this.angle = Math.PI - this.angle;
                     this.accelerer();
 
@@ -99,8 +109,8 @@ class Balle{
 
         //Droite
         if(this.droite > raquetteDroite.positionX){
-            if(this.bas > raquetteDroite.positionY){
-                if(this.positionY < raquetteDroite.bas){
+            if(this.bas > raquetteDroite.positionY) {
+                if(this.positionY < raquetteDroite.bas) {
                     this.angle = Math.PI - this.angle;
                     this.accelerer();
 
@@ -111,12 +121,16 @@ class Balle{
 
     }
 
-    recentrer(){
+    recentrer() {
         this.positionX = terrain.largeur / 2 - this.largeur / 2;
         this.positionY = terrain.hauteur / 2 - this.hauteur / 2;
     }
-
-    majHTML(){
+    
+    reinitialiserVitesse() {
+        this.vitesse = this.vitesseDepart;
+    }
+        
+    majHTML() {
         this.$element.css("left",balle.positionX);
         this.$element.css("top",balle.positionY);
     }
