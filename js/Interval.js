@@ -11,7 +11,7 @@ let son = new Son();
 let demarrer = false;
 
 // On créait une boucle pour les fonction précédentes
-setInterval(function(){
+setInterval(function() {
     
     if(demarrer) {
 
@@ -20,6 +20,8 @@ setInterval(function(){
         raquetteGauche.bouger();
         
         raquetteDroite.bouger();
+        
+    }
 
 }, 10);
     
