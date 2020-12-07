@@ -24,6 +24,7 @@ setInterval(function(){
 $("#btn-jouer").on("mouseup", function (event) {
     event.preventDefault();
     demarrer = true;
+    $("#ecran-debut").addClass("invisible");
 });
 
 //On fait appel aux addEventListener afin de pouvoir détecter et ainsi lire les touches utiliser
