@@ -8,12 +8,14 @@ let joueur1 = new Joueur($("#droite"));
 
 // On créait une boucle pour les fonction précédentes
 setInterval(function(){
-
-    balle.bouger();
     
-    raquetteGauche.bouger();
+    if(demarrer) {
+
+        balle.bouger();
+    
+        raquetteGauche.bouger();
         
-    raquetteDroite.bouger();
+        raquetteDroite.bouger();
 
 }, 10);
 
