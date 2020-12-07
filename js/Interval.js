@@ -1,8 +1,11 @@
 // On créait une nouvelle fonction afin de definir les mouvents de la balle et de la raquette
 let terrain = new Terrain($("#terrain"));
+
 let balle = new Balle($("#balle"));
+
 let raquetteGauche = new Raquette($("#gauche"));
 let raquetteDroite = new Raquette($("#droite"));
+
 let joueur0 = new Joueur($("#gauche"));
 let joueur1 = new Joueur($("#droite"));
 
