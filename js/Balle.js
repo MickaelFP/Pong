@@ -36,7 +36,7 @@ class Balle{
     }
 
     defAngle() {
-        return 
+        return; 
     }
 
     bouger() {
