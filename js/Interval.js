@@ -9,7 +9,7 @@ let raquetteDroite = new Raquette($("#droite"));
 let joueur0 = new Joueur($("#gauche"));
 let joueur1 = new Joueur($("#droite"));
 
-let son = new Son();
+//let son = new Son();
 
 let demarrer = false;
 
