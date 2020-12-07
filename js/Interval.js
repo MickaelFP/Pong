@@ -11,18 +11,17 @@ let son = new Son();
 let demarrer = false;
 
 // On créait une boucle pour les fonction précédentes
-setInterval(function() {
+setInterval(function () {
     
     if(demarrer) {
-
+        
         balle.bouger();
-    
+
         raquetteGauche.bouger();
         
         raquetteDroite.bouger();
         
     }
-
 }, 10);
     
 $("#btn-jouer").on("mouseup", function (event) {
