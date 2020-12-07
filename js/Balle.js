@@ -44,7 +44,7 @@ class Balle {
             this.vitesse *= this.acceleration;
             consol.log(Math.abs(this.vitesse))            
         }
-        else () {
+        else{
             this.vitesse = this.vitesseMax;
         }
     }
