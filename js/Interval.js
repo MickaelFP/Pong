@@ -23,7 +23,7 @@ setInterval(function() {
         
     }
 
-}, 10);
+} 10);
     
 $("#btn-jouer").on("mouseup", function (event) {
     event.preventDefault();
