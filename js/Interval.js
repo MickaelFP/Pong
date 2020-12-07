@@ -6,6 +6,8 @@ let raquetteDroite = new Raquette($("#droite"));
 let joueur0 = new Joueur($("#gauche"));
 let joueur1 = new Joueur($("#droite"));
 
+let demarrer = false;
+
 // On créait une boucle pour les fonction précédentes
 setInterval(function(){
     
@@ -18,6 +20,11 @@ setInterval(function(){
         raquetteDroite.bouger();
 
 }, 10);
+    
+$("#btn-jouer").on("mouseup", function (event) {
+    event.preventDefault();
+    demarrer = true;
+});
 
 //On fait appel aux addEventListener afin de pouvoir détecter et ainsi lire les touches utiliser
 window.addEventListener("keydown", function (event){
