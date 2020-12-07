@@ -9,8 +9,8 @@ class Balle{
         this.positionX = parseInt($element.css("left"));
         this.positionY = parseInt($element.css("top"));
 
-        this.vitesseDepart = terrain.largeur / 500;
         this.vitesse = this.vitesseDepart;
+        this.vitesseDepart = terrain.largeur / 500;
         this.vitesseMax = terrain.largeur / 100;
         this.acceleration = 1.1;
 
